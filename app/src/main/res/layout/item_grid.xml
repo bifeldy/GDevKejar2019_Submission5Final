@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_marginTop="8dp"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/movies_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/maido2"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/data_image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:background="#9F000000">
+
+            <TextView
+                android:id="@+id/movies_title"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                android:paddingRight="@dimen/nav_header_vertical_spacing"
+                android:text="@string/data_title"
+                android:drawableStart="@drawable/ic_subject"
+                android:drawablePadding="4dp"
+                android:textColor="@android:color/white"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/movies_vote_average"
+                        android:paddingBottom="@dimen/nav_header_vertical_spacing"
+                        android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:text="@string/data_score"
+                        android:drawableStart="@drawable/ic_star_white"
+                        android:drawablePadding="4dp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/movies_popularity"
+                        android:paddingBottom="@dimen/nav_header_vertical_spacing"
+                        android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:text="@string/data_popularity"
+                        android:drawableStart="@drawable/ic_favorite_white"
+                        android:drawablePadding="4dp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

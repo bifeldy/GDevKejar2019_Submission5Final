@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/nav_discover">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_discover_movie"
+                    android:icon="@drawable/ic_movie"
+                    android:title="@string/nav_movie" />
+                <item
+                    android:id="@+id/nav_discover_tv_shows"
+                    android:icon="@drawable/ic_tv_airing"
+                    android:title="@string/nav_tv_shows" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/nav_movie">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_movies_popular"
+                    android:icon="@drawable/ic_favorite"
+                    android:title="@string/nav_movie_popular" />
+                <item
+                    android:id="@+id/nav_movies_top_rated"
+                    android:icon="@drawable/ic_star"
+                    android:title="@string/nav_movie_top_rated" />
+                <item
+                    android:id="@+id/nav_movies_upcoming"
+                    android:icon="@drawable/ic_upcoming"
+                    android:title="@string/nav_movie_upcoming" />
+                <item
+                    android:id="@+id/nav_movies_now_playing"
+                    android:icon="@drawable/ic_movie"
+                    android:title="@string/nav_movie_now_playing" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/nav_tv_shows">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_tv_shows_popular"
+                    android:icon="@drawable/ic_favorite"
+                    android:title="@string/nav_tv_popular" />
+                <item
+                    android:id="@+id/nav_tv_shows_top_rated"
+                    android:icon="@drawable/ic_star"
+                    android:title="@string/nav_tv_top_rated" />
+                <item
+                    android:id="@+id/nav_tv_shows_on_tv"
+                    android:icon="@drawable/ic_tv"
+                    android:title="@string/nav_tv_on_tv" />
+                <item
+                    android:id="@+id/nav_tv_shows_airing_today"
+                    android:icon="@drawable/ic_tv_airing"
+                    android:title="@string/nav_tv_airing_today" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/miscellaneous">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/nav_about" />
+        </menu>
+    </item>
+
+</menu>

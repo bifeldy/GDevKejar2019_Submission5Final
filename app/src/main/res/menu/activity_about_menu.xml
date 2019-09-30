@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_about_linkedin"
+        android:title="@string/action_about_linkedin" />
+
+    <item android:id="@+id/action_about_github"
+        android:title="@string/action_about_github" />
+
+    <item android:id="@+id/action_about_facebook"
+        android:title="@string/action_about_facebook" />
+
+    <item android:id="@+id/action_about_twitter"
+        android:title="@string/action_about_twitter" />
+
+    <item android:id="@+id/action_about_line"
+        android:title="@string/action_about_line" />
+
+</menu>

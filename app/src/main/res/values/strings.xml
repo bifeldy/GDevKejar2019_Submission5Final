@@ -1,0 +1,180 @@
+<resources>
+
+    <!-- App Information -->
+    <string name="app_name">MADE-BasiliusBias_Submission5</string>
+    <string name="app_version" translatable="false">v0.99-BetA_Test!</string>
+    <string name="app_author" translatable="false">Basilius Bias Astho Christyono</string>
+    <string name="partner" translatable="false">Google Dev. Kejar + Dicoding"</string>
+
+    <!-- Utilities, Fun Stuff -->
+    <string name="animated_gif" translatable="false">https://irzkog.dm.files.1drv.com/y4mctL1U36aFrZMmPA5ojwudJfI607KZL7tw0gof2xCIxnz6l9dudcTpsVVct92D_cgNol9tDImd2ycmdXg62oqxvKj0Tuoy4EgdFvewY-0xXBNa6R_22PR18Zsu-nrBVct0-FP37aZWUiEConbVmqu8FSdAuKhNWvZ4F96dzjuZyY9jzsotcKiKHCX6rZV_OcGhX6DPLp0ek5X60zinvLq4Q</string>
+    <string name="loading_image">Loading Image …</string>
+    <string name="animated_loading_data" translatable="false">https://jrznog.dm.files.1drv.com/y4mebt7-M1sS28d2MWGIFeO3rcdWbDua4NIFA3O5H6OqyBoxWcAR_P-Dxd2fxucS9TeH2btYKmn_VA91qemaumk0H7gvitAoBd9bOKkPpCb5-_LEDYaJQBk67JKPi1o059dSfK2zUu2HZDyP9_T8O7LtbaPO90vdGVhsKtY-QTqV5P9rAuiJgJRYBQD282arPNv8T4zIeKKcx8zj6qHgHbX8g</string>
+    <string name="loading_text">Loading Data …</string>
+    <string name="coming_soon">Coming Soon ^_^</string>
+    <string name="no_data">No Data T.T</string>
+    <string name="good_bye">Good Bye ^_^</string>
+
+    <!-- Activity Window & Fragment TitleBar -->
+    <string name="title_activity_main">Main Application</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_search">Search TVs And Movies</string>
+    <string name="title_activity_detail">Detail Information</string>
+    <string name="title_activity_settings">Application Settings</string>
+    <string name="title_activity_about">About Me!</string>
+    <string name="title_activity_register">Register!</string>
+
+    <!-- Splash Activity Content Template -->
+    <string name="splash_picture">Application Picture Icon Logo</string>
+
+    <!-- Splash & Login -->
+    <string name="splash_login_info">Hi, Please Login First! ^_^.~</string>
+    <string name="register_info">Come on, Register Now! ^_^.~</string>
+
+    <string name="txtUser">Username</string>
+    <string name="txtPass">Password</string>
+    <string name="txtPassReg">Create a New Password</string>
+    <string name="txtRePassReg">Re-Type Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Register</string>
+
+    <string name="infoSplash1">Please Fill In Correctly!</string>
+    <string name="infoSplash2">"Welcome, "</string>
+    <string name="infoSplash3">Incorrect Username Or Password.</string>
+    <string name="infoSplash4">Username Cannot Be Found, Please Register First!</string>
+
+    <string name="infoRegis1">Please Fill In Correctly!</string>
+    <string name="infoRegis2">Username Already Used.</string>
+    <string name="infoRegis3">Passwords Mismatch.</string>
+    <string name="infoRegis4">"Successfully Registered Account "</string>
+
+    <!-- Main Activity Content Template -->
+    <string name="main_back_pressed">Press BACK Button Again To Exit</string>
+
+    <!-- Main Activity Navigation Drawer -->
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    <!-- Main Activity Navigation Header -->
+    <string name="nav_user_img">User Profile Picture</string>
+    <string name="nav_user_name">Name</string>
+    <string name="nav_user_email">Email</string>
+
+    <!-- Main Activity Navigation Menu Content -->
+    <string name="nav_discover">Discover</string>
+    <string name="nav_movie">Movies</string>
+    <string name="nav_movie_popular">Popular</string>
+    <string name="nav_movie_top_rated">Top Rated</string>
+    <string name="nav_movie_upcoming">Upcoming</string>
+    <string name="nav_movie_now_playing">Now Playing</string>
+    <string name="nav_tv_shows">TV Shows</string>
+    <string name="nav_tv_popular">Popular</string>
+    <string name="nav_tv_top_rated">Top Rated</string>
+    <string name="nav_tv_on_tv">On TV!</string>
+    <string name="nav_tv_airing_today">Airing Today</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="nav_about">About Me!</string>
+
+    <!-- Main Activity Action Menu -->
+    <string name="action_main_profile">My Profile</string>
+    <string name="action_main_settings">Settings</string>
+    <string name="action_profile_view_online">View Online</string>
+
+    <!-- About Activity Content Template -->
+    <string name="about_library">Libraries Used</string>
+
+    <!-- About Activity Action Menu -->
+    <string name="action_about_linkedin" translatable="false">LinkedIn</string>
+    <string name="action_about_github" translatable="false">GitHub</string>
+    <string name="action_about_facebook" translatable="false">FaceBook</string>
+    <string name="action_about_twitter" translatable="false">Twitter</string>
+    <string name="action_about_line" translatable="false">LINE</string>
+    <string name="action_menu_logout">Logout</string>
+
+    <!-- Settings Activity Language Category -->
+    <string name="settings_saved">Setting Saved!</string>
+    <string name="pref_language">Application Language</string>
+
+    <!-- Settings Activity Language Switch -->
+    <string name="pref_language_switch_key" translatable="false">pref_language_switch</string>
+    <string name="pref_language_switch_title">Custom Language</string>
+    <string name="pref_language_default_switch" translatable="false">false</string>
+    <string name="pref_language_switch_on">Using A Custom Language</string>
+    <string name="pref_language_switch_off">Using System Default Language</string>
+
+    <!-- Settings Activity Language Select -->
+    <string name="pref_language_list_key" translatable="false">pref_language_value</string>
+    <string name="pref_language_list_title">Choose Language</string>
+    <string name="data_title">Title</string>
+    <string name="data_image">Image</string>
+
+    <!-- Content -->
+    <string name="overview">Overview</string>
+    <string name="data_overview">We don\'t have an overview translated in English.</string>
+
+    <string name="information">Information</string>
+    <string name="original_name">Original Name</string>
+    <string name="popularity">Popularity</string>
+    <string name="genres">Genres</string>
+
+    <string name="data_score">Score</string>
+    <string name="data_popularity">Popularity</string>
+    <string name="search_text">Search Here .. ^_^.~</string>
+    <string name="search_button">Search!</string>
+
+    <string name="tmdb_key" translatable="false">2c864ba983acc179387f55e736decaf9</string>
+    <string name="tmdb_api" translatable="false">https://api.themoviedb.org/3/</string>
+    <string name="tmdb_img" translatable="false">https://image.tmdb.org/t/p/w185</string>
+
+    <!-- The Movie Database -->
+    <string name="action_detail_view_on_tmdb">View on TMDb!</string>
+    <string name="detail">Detail</string>
+    <string name="movie">Movie</string>
+    <string name="tv">TV</string>
+
+    <!-- Detail Activity Action Menu -->
+
+    <!-- Detail Activity Content Template -->
+    <string name="episodes">Episodes</string>
+    <string name="votes">Votes</string>
+
+    <string name="add_favorites">Added to favorite~</string>
+    <string name="remove_favorites">Removed from favorite~</string>
+    <string name="first_page" translatable="false"><![CDATA[<<]]></string>
+    <string name="previous_page" translatable="false"><![CDATA[<]]></string>
+    <string name="next_page" translatable="false"><![CDATA[>]]></string>
+    <string name="last_page" translatable="false"><![CDATA[>>]]></string>
+
+    <!-- Settings -->
+    <string name="appwidget_text">My Favorite Film</string>
+    <string name="add_widget">Add Widget</string>
+    <string-array name="pref_language_label">
+        <item>English - US</item>
+        <item>Indonesian - ID</item>
+        <item>Japanese - JA</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="pref_language_value">
+        <item>en-US</item>
+        <item>id-ID</item>
+        <item>ja-JP</item>
+    </string-array>
+    <string-array name="filter_type">
+        <item>Popularity Descending</item>
+        <item>Popularity Ascending</item>
+        <item>Rating Descending</item>
+        <item>Rating Ascending</item>
+        <item>Release Date Descending</item>
+        <item>Release Date Ascending</item>
+        <item>Title Descending</item>
+        <item>Title Ascending</item>
+    </string-array>
+    <string-array name="filter_year">
+        <item>2019</item>
+        <item>2018</item>
+        <item>....</item>
+        <item>1900</item>
+    </string-array>
+
+</resources>
