@@ -2,7 +2,6 @@ package id.ac.umn.made_basiliusbias_submission5.fragments;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,11 +25,6 @@ import id.ac.umn.made_basiliusbias_submission5.models.FavoriteViewModel;
 import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
-
-    // Shared Preferences
-    private static final String PREFERENCES_FILENAME = "USER_INFORMATION";
-    private static final int PREFERENCES_MODE = Context.MODE_PRIVATE;
-    private static final String KEY_USERNAME = "USERNAME";
 
     // Parameter Key
     private static final String FRAGMENT_NAME = "FRAGMENT_NAME";
@@ -109,9 +103,6 @@ public class ProfileFragment extends Fragment {
         else if (recyclerType != null && !recyclerType.equals("") && recyclerType.equals("GridLayout")) {
             recyclerView.setLayoutManager(new GridLayoutManager(v.getContext(), mNoOfColumns));
         }
-
-        // Get Data Shared Preferences For Login
-        SharedPreferences userInfo = Objects.requireNonNull(getActivity()).getSharedPreferences(PREFERENCES_FILENAME, PREFERENCES_MODE);
 
         // Check Fragment What Will Show
         switch (fragmentName) {

@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import id.ac.umn.made_basiliusbias_submission5.R;
-import id.ac.umn.made_basiliusbias_submission5.databases.FavoritesHelper;
 import id.ac.umn.made_basiliusbias_submission5.pojos.Movie;
 import id.ac.umn.made_basiliusbias_submission5.pojos.Tv;
 

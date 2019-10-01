@@ -136,6 +136,7 @@ public class MainFragment extends Fragment {
                     if (movies != null) {
 
                         // Adding New Live Data To Adapter
+                        // noinspection unchecked
                         movieGridAdapter.setMovies((List<Movie>) movies);
                     }
                 });
@@ -200,6 +201,7 @@ public class MainFragment extends Fragment {
                     if (tvs != null) {
 
                         // Adding New Live Data To Adapter
+                        // noinspection unchecked
                         tvListAdapter.setTvs((List<Tv>) tvs);
                     }
                 });
