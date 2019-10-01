@@ -8,11 +8,17 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import id.ac.umn.made_basiliusbias_submission5.R;
 import id.ac.umn.made_basiliusbias_submission5.Utility;
+import id.ac.umn.made_basiliusbias_submission5.alarms.AlarmReceiver;
+
+import java.util.Objects;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     // String Language Code
     private String language;
+
+    // Alarm
+    private AlarmReceiver alarmReceiver;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -43,6 +49,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 languageList.setValueIndex(i);
             }
         }
+
+        alarmReceiver = new AlarmReceiver();
     }
 
     @Override
@@ -71,6 +79,38 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
             // Update Summary Of List Language Summary Selected
             preference.setSummary(((ListPreference) preference).getEntry());
+        }
+        // Daily Reminder
+        else if (key.equals(getResources().getString(R.string.pref_daily_reminder_key))) {
+
+            // Switch ON
+            if(((SwitchPreference) preference).isChecked()) {
+                alarmReceiver.setAlarmDaily(
+                    getContext(),
+                    AlarmReceiver.TYPE_DAILY,
+                    "07:00"
+                );
+            }
+            // Switch OFF
+            else {
+                alarmReceiver.cancelAlarm(Objects.requireNonNull(getContext()), AlarmReceiver.TYPE_DAILY);
+            }
+        }
+        // New Release Reminder
+        else if (key.equals(getResources().getString(R.string.pref_movie_release_reminder_key))) {
+
+            // Switch ON
+            if(((SwitchPreference) preference).isChecked()) {
+                alarmReceiver.setAlarmDaily(
+                    getContext(),
+                    AlarmReceiver.TYPE_RELEASE,
+                    "08:00"
+                );
+            }
+            // Switch OFF
+            else {
+                alarmReceiver.cancelAlarm(Objects.requireNonNull(getContext()), AlarmReceiver.TYPE_RELEASE);
+            }
         }
     }
 

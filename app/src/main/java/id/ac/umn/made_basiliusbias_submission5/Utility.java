@@ -21,6 +21,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import id.ac.umn.made_basiliusbias_submission5.apis.DiscoverSearchAPI;
+import id.ac.umn.made_basiliusbias_submission5.databases.DatabaseHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,8 +72,8 @@ public class Utility {
 
         try {
 
-            InputStream inputStream = context.getAssets().open(DbHelper.DB_NAME);
-            String outFileName = DbHelper.DB_LOCATION + DbHelper.DB_NAME;
+            InputStream inputStream = context.getAssets().open(DatabaseHelper.DB_NAME);
+            String outFileName = DatabaseHelper.DB_LOCATION + DatabaseHelper.DB_NAME;
             OutputStream outputStream = new FileOutputStream(outFileName);
             byte[] buff = new byte[1024];
             int length;
@@ -93,9 +94,9 @@ public class Utility {
         }
     }
 
-    public static void importDatabase(Context context, DbHelper mDBHelper) {
+    public static void importDatabase(Context context, DatabaseHelper mDBHelper) {
 
-        File database = context.getDatabasePath(DbHelper.DB_NAME);
+        File database = context.getDatabasePath(DatabaseHelper.DB_NAME);
         if(!database.exists()) {
             mDBHelper.getReadableDatabase();
 

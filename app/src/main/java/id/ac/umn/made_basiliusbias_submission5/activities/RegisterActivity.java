@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.*;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import id.ac.umn.made_basiliusbias_submission5.DbHelper;
 import id.ac.umn.made_basiliusbias_submission5.LangApp;
 import id.ac.umn.made_basiliusbias_submission5.R;
 import id.ac.umn.made_basiliusbias_submission5.Utility;
+import id.ac.umn.made_basiliusbias_submission5.databases.UsersHelper;
 
 public class RegisterActivity extends LangApp implements View.OnClickListener {
 
@@ -20,8 +20,8 @@ public class RegisterActivity extends LangApp implements View.OnClickListener {
     private TextView txtInfoRegisterScreen;
     private EditText txtUserRegisterScreen, txtPassRegisterScreen, txtRePassRegisterScreen;
 
-    // Database Connection
-    private DbHelper mDBHelper;
+    // Users Helper
+    private UsersHelper usersHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ public class RegisterActivity extends LangApp implements View.OnClickListener {
         ;
 
         // Initialize Database
-        mDBHelper = new DbHelper(this);
+        usersHelper = new UsersHelper(this);
     }
 
     @Override
@@ -129,14 +129,14 @@ public class RegisterActivity extends LangApp implements View.OnClickListener {
         else {
 
             // Check User If Exist Try Login
-            if(mDBHelper.userExist(username)) {
+            if(usersHelper.userExist(username)) {
                 information = getResources().getString(R.string.infoRegis2);
             }
             else if (!password.equals(rePassword)) {
                 information = getResources().getString(R.string.infoRegis3);
             }
             else {
-                mDBHelper.addUser(username, password);
+                usersHelper.addUser(username, password);
                 information = getResources().getString(R.string.infoRegis4) + username + " ^_^.~";
                 Toast.makeText(RegisterActivity.this, information, Toast.LENGTH_LONG).show();
                 finish();

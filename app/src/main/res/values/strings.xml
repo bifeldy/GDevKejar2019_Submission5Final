@@ -94,6 +94,7 @@
     <!-- Settings Activity Language Category -->
     <string name="settings_saved">Setting Saved!</string>
     <string name="pref_language">Application Language</string>
+    <string name="pref_reminder">Reminder</string>
 
     <!-- Settings Activity Language Switch -->
     <string name="pref_language_switch_key" translatable="false">pref_language_switch</string>
@@ -107,6 +108,18 @@
     <string name="pref_language_list_title">Choose Language</string>
     <string name="data_title">Title</string>
     <string name="data_image">Image</string>
+
+    <!-- Settings Activity Language Switch -->
+    <string name="pref_reminder_off">Reminder Disabled</string>
+    <string name="pref_reminder_default_switch" translatable="false">false</string>
+
+    <string name="pref_daily_reminder_key" translatable="false">pref_daily_reminder_switch</string>
+    <string name="pref_daily_reminder_title">Daily Reminder</string>
+    <string name="pref_daily_reminder_on">Everyday @ 07:00 AM</string>
+
+    <string name="pref_movie_release_reminder_key" translatable="false">pref_release_reminder_switch</string>
+    <string name="pref_movie_release_reminder_title">New Movie Release Reminder</string>
+    <string name="pref_movie_release_reminder_on">Everyday @ 08:00 AM</string>
 
     <!-- Content -->
     <string name="overview">Overview</string>
@@ -146,7 +159,7 @@
     <string name="last_page" translatable="false"><![CDATA[>>]]></string>
 
     <!-- Settings -->
-    <string name="appwidget_text">My Favorite Film</string>
+    <string name="appwidget_text">My Favorite TV Movie</string>
     <string name="add_widget">Add Widget</string>
     <string-array name="pref_language_label">
         <item>English - US</item>
@@ -176,5 +189,6 @@
         <item>....</item>
         <item>1900</item>
     </string-array>
+    <string name="pref_release_reminder">Daily Release</string>
 
 </resources>

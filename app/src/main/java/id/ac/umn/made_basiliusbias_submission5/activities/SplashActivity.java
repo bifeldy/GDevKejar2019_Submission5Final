@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
-import id.ac.umn.made_basiliusbias_submission5.DbHelper;
 import id.ac.umn.made_basiliusbias_submission5.LangApp;
 import id.ac.umn.made_basiliusbias_submission5.R;
 import id.ac.umn.made_basiliusbias_submission5.Utility;
+import id.ac.umn.made_basiliusbias_submission5.databases.UsersHelper;
 
 public class SplashActivity extends LangApp implements View.OnClickListener {
 
@@ -27,8 +27,8 @@ public class SplashActivity extends LangApp implements View.OnClickListener {
     private EditText splash_txt_user, splash_txt_password;
     private Button splash_btn_login, splash_btn_register, splash_btn_about;
 
-    // Database Helper
-    private DbHelper mDBHelper;
+    // Users Helper
+    private UsersHelper usersHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class SplashActivity extends LangApp implements View.OnClickListener {
         splash_btn_about.setVisibility(View.GONE);
 
         // Import Database
-        mDBHelper = new DbHelper(this);
-        Utility.importDatabase(this, mDBHelper);
+        usersHelper = new UsersHelper(this);
+        Utility.importDatabase(this, usersHelper.getDataBaseHelper());
 
         // Keyboard Listener
         Utility.keyboardListener(rootViewSplashScreen, splash_picture, splash_text);
@@ -203,8 +203,8 @@ public class SplashActivity extends LangApp implements View.OnClickListener {
         else {
 
             // Check User If Exist Try Login
-            if (mDBHelper.userExist(username)) {
-                if(mDBHelper.login(username, password)) {
+            if (usersHelper.userExist(username)) {
+                if(usersHelper.login(username, password)) {
                     information = getResources().getString(R.string.infoSplash2) + username + "! ^_^.~";
                     Toast.makeText(SplashActivity.this, information, Toast.LENGTH_LONG).show();
                     loginSuccess();

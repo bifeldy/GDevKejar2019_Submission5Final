@@ -23,4 +23,23 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/pref_reminder">
+
+        <SwitchPreference
+            android:key="@string/pref_daily_reminder_key"
+            android:title="@string/pref_daily_reminder_title"
+            android:summaryOn="@string/pref_daily_reminder_on"
+            android:summaryOff="@string/pref_reminder_off"
+            android:defaultValue="@string/pref_reminder_default_switch" />
+
+        <SwitchPreference
+            android:key="@string/pref_movie_release_reminder_key"
+            android:title="@string/pref_movie_release_reminder_title"
+            android:summaryOn="@string/pref_movie_release_reminder_on"
+            android:summaryOff="@string/pref_reminder_off"
+            android:defaultValue="@string/pref_reminder_default_switch" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

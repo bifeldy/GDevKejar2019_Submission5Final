@@ -80,6 +80,13 @@
     <string name="good_bye">さようなら～ ^_^</string>
     <string name="title_activity_search">テレビと映画を検索</string>
     <string name="search_text">検索 .. ^_^.~</string>
-    <string name="appwidget_text">私の好きな映画</string>
+    <string name="appwidget_text">私の好きなテレビ映画</string>
     <string name="add_widget">ウィジェットを追加</string>
+    <string name="pref_reminder_off">無効なリマインダー</string>
+    <string name="pref_reminder">リマインダー</string>
+    <string name="pref_movie_release_reminder_title">新作映画のリマインダー</string>
+    <string name="pref_movie_release_reminder_on">毎日 @ 08:00 AM</string>
+    <string name="pref_daily_reminder_on">毎日 @ 07:00 AM</string>
+    <string name="pref_daily_reminder_title">毎日のリマインダー</string>
+    <string name="pref_release_reminder">デイリーリリース</string>
 </resources>

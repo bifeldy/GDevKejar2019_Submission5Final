@@ -20,10 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import id.ac.umn.made_basiliusbias_submission5.DbHelper;
 import id.ac.umn.made_basiliusbias_submission5.LangApp;
 import id.ac.umn.made_basiliusbias_submission5.R;
 import id.ac.umn.made_basiliusbias_submission5.Utility;
+import id.ac.umn.made_basiliusbias_submission5.databases.FavoritesHelper;
 import id.ac.umn.made_basiliusbias_submission5.models.DetailMovieViewModel;
 import id.ac.umn.made_basiliusbias_submission5.models.DetailTvViewModel;
 
@@ -257,8 +257,8 @@ public class DetailActivity extends LangApp {
 
         // Find FloatingActionButton
         FloatingActionButton floating_liked_button = findViewById(R.id.floating_liked_button);
-        DbHelper mDBHelper = new DbHelper(this);
-        isFavorited = mDBHelper.isFavorited(data_id, data_type, userInfo.getString(KEY_USERNAME, ""));
+        FavoritesHelper favoritesHelper = new FavoritesHelper(this);
+        isFavorited = favoritesHelper.isUserFavorited(data_id, data_type, userInfo.getString(KEY_USERNAME, ""));
 
         if(isFavorited) {
             floating_liked_button.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_favorite));
@@ -271,7 +271,7 @@ public class DetailActivity extends LangApp {
             if(!isFavorited) {
                 isFavorited = true;
                 floating_liked_button.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_favorite));
-                mDBHelper.addFavorite(
+                favoritesHelper.addUserFavorite(
                         data_id,
                         data_type,
                         detail_title.getText().toString(),
@@ -285,7 +285,7 @@ public class DetailActivity extends LangApp {
             else {
                 isFavorited = false;
                 floating_liked_button.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_favorite_border));
-                mDBHelper.removeFavorite(data_id, data_type, userInfo.getString(KEY_USERNAME, ""));
+                favoritesHelper.removeUserFavorite(data_id, data_type, userInfo.getString(KEY_USERNAME, ""));
                 Snackbar.make(v, getResources().getString(R.string.remove_favorites) + " :: " + data_id, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });

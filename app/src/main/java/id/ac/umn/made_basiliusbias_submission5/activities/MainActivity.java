@@ -20,9 +20,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
-import id.ac.umn.made_basiliusbias_submission5.DbHelper;
 import id.ac.umn.made_basiliusbias_submission5.LangApp;
 import id.ac.umn.made_basiliusbias_submission5.R;
+import id.ac.umn.made_basiliusbias_submission5.databases.UsersHelper;
 import id.ac.umn.made_basiliusbias_submission5.fragments.MainFragment;
 
 public class MainActivity extends LangApp implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,8 +33,8 @@ public class MainActivity extends LangApp implements NavigationView.OnNavigation
     private static final String KEY_USERNAME = "USERNAME";
     private static final String KEY_EMAIL = "USEREMAIL";
 
-    // Database Helper
-    private DbHelper mDBHelper;
+    // Users Helper
+    private UsersHelper usersHelper;
 
     // Navigation Drawer Menu Opened
     private int DRAWER_MENU_NUMBER;
@@ -98,7 +98,7 @@ public class MainActivity extends LangApp implements NavigationView.OnNavigation
         SharedPreferences userInfo = getSharedPreferences(PREFERENCES_FILENAME, PREFERENCES_MODE);
 
         // Initialize DB Helper
-        mDBHelper = new DbHelper(this);
+        usersHelper = new UsersHelper(this);
 
         // Load User Login Info Into Nav Menu Profile
         Glide.with(this)
@@ -193,7 +193,7 @@ public class MainActivity extends LangApp implements NavigationView.OnNavigation
         else if(id == R.id.action_main_logout) {
 
             // Logout & Go To Login Screen
-            mDBHelper.logout();
+            usersHelper.logout();
             // Go To About Activity
             intent = new Intent(MainActivity.this, SplashActivity.class);
             Toast.makeText(MainActivity.this, getResources().getString(R.string.good_bye), Toast.LENGTH_LONG).show();

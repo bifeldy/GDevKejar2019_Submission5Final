@@ -80,6 +80,13 @@
     <string name="good_bye">Selamat Tinggal ^_^</string>
     <string name="title_activity_search">Cari TV Dan Film</string>
     <string name="search_text">Cari Di Sini .. ^_^.~</string>
-    <string name="appwidget_text">Film Favoritku</string>
+    <string name="appwidget_text">Film TV Favorit Saya</string>
     <string name="add_widget">Tambah Widget</string>
+    <string name="pref_reminder_off">Pengingat Mati</string>
+    <string name="pref_reminder">Pengingat</string>
+    <string name="pref_movie_release_reminder_title">Pengingat Film Rilisan Baru</string>
+    <string name="pref_movie_release_reminder_on">Setiap Hari @ 08:00 Pagi</string>
+    <string name="pref_daily_reminder_on">Setiap Hari @ 07:00 Pagi</string>
+    <string name="pref_daily_reminder_title">Pengingat Harian</string>
+    <string name="pref_release_reminder">Rilisan Harian</string>
 </resources>
