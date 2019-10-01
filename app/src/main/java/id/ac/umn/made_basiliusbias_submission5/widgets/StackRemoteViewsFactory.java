@@ -24,7 +24,6 @@ import java.util.List;
 
 import static id.ac.umn.made_basiliusbias_submission5.databases.FavoritesHelper.CONTENT_URI;
 
-@SuppressWarnings("unchecked")
 public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
     // Shared Preferences
@@ -40,70 +39,43 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
     }
 
     @Override
-    public void onCreate() {
-
-    }
+    public void onCreate() {}
 
     @Override
     public void onDataSetChanged() {
 
+        final long identityToken = Binder.clearCallingIdentity();
+
         // Get Data Shared Preferences For Login
         SharedPreferences userInfo = mContext.getSharedPreferences(PREFERENCES_FILENAME, PREFERENCES_MODE);
 
-        FavoritesHelper favoritesHelper = new FavoritesHelper(mContext);
-        List<Movie> favoriteMovie = (List<Movie>) favoritesHelper.getUserFavoritesListType("Movie", userInfo.getString(KEY_USERNAME, ""));
-        List<Tv> favoriteTv = (List<Tv>) favoritesHelper.getUserFavoritesListType("TV", userInfo.getString(KEY_USERNAME, ""));
+        Uri uri1 = Uri.parse(CONTENT_URI + "/" + userInfo.getString(KEY_USERNAME, "") + "/movie");
+        loadContentResolver(uri1);
 
-        for (Movie fav : favoriteMovie) {
+        Uri uri2 = Uri.parse(CONTENT_URI + "/" + userInfo.getString(KEY_USERNAME, "") + "/tv");
+        loadContentResolver(uri2);
+
+        Binder.restoreCallingIdentity(identityToken);
+    }
+
+    private void loadContentResolver(Uri uri) {
+        Cursor cursor = mContext.getContentResolver().query(uri, null, null, null, null, null);
+        while(cursor != null && cursor.moveToNext()) {
             try {
-                String url1 = fav.getPoster_path();
+                String url1 = cursor.getString(3);
                 URL ulrn = new URL(url1);
                 HttpURLConnection con = (HttpURLConnection) ulrn.openConnection();
                 InputStream is = con.getInputStream();
                 Bitmap bmp = BitmapFactory.decodeStream(is);
                 if (null != bmp) mWidgetItems.add(bmp);
-                else System.out.println("The Bitmap is NULL");
-            } catch (Exception ignored) {}
+            }
+            catch(Exception ignored) {}
         }
-
-        for (Tv fav : favoriteTv) {
-            try {
-                String url1 = fav.getPoster_path();
-                URL ulrn = new URL(url1);
-                HttpURLConnection con = (HttpURLConnection) ulrn.openConnection();
-                InputStream is = con.getInputStream();
-                Bitmap bmp = BitmapFactory.decodeStream(is);
-                if (null != bmp) mWidgetItems.add(bmp);
-                else System.out.println("The Bitmap is NULL");
-            } catch (Exception ignored) {}
-        }
-
-        // TODO :: HASILNYA 0 Pake Content Provider .. Aneh
-
-//        final long identityToken = Binder.clearCallingIdentity();
-//        Uri uri = Uri.parse(CONTENT_URI + "/" + userInfo.getString(KEY_USERNAME, "") + "/movie");
-//        Cursor cursor = mContext.getContentResolver().query(uri, null, null, null, null, null);
-//        int count = cursor.getCount();
-//        while(cursor.moveToNext()) {
-//            try {
-//                String url1 = cursor.getString(3);
-//                URL ulrn = new URL(url1);
-//                HttpURLConnection con = (HttpURLConnection) ulrn.openConnection();
-//                InputStream is = con.getInputStream();
-//                Bitmap bmp = BitmapFactory.decodeStream(is);
-//                if (null != bmp) mWidgetItems.add(bmp);
-//                else System.out.println("The Bitmap is NULL");
-//            }
-//            catch(Exception ignored) {}
-//        }
-//        cursor.close();
-//        Binder.restoreCallingIdentity(identityToken);
+        if(cursor != null) cursor.close();
     }
 
     @Override
-    public void onDestroy() {
-
-    }
+    public void onDestroy() {}
 
     @Override
     public int getCount() {

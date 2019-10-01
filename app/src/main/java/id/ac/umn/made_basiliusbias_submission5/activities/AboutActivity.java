@@ -97,6 +97,10 @@ public class AboutActivity extends LangApp {
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://line.me/ti/p/~Bifeldy"));
                 startActivity(intent);
                 break;
+
+            default:
+                // Back To Parent Activity
+                finish();
         }
 
         return super.onOptionsItemSelected(item);

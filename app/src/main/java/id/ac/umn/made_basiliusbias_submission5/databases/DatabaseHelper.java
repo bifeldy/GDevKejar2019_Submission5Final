@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
 
-    public void openDatabase() {
+    void openDatabase() {
         String dbPath = mContext.getDatabasePath(DB_NAME).getPath();
         if(mDatabase != null && mDatabase.isOpen()) {
             return;
@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         mDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
-    public void closeDatabase() {
+    void closeDatabase() {
         if(mDatabase != null) {
             mDatabase.close();
         }
@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         mDatabase.insert("users", "null", contentValues);
     }
 
-    public Cursor querySelect(String table, String[] column, String selection, String[] selectionArgs, String groupBy, String having, String order) {
+    Cursor querySelect(String table, String[] column, String selection, String[] selectionArgs, String groupBy, String having, String order) {
         return mDatabase.query(
                 table,
                 column,

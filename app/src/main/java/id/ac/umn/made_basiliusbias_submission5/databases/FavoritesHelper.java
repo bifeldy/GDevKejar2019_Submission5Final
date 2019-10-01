@@ -4,11 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-import id.ac.umn.made_basiliusbias_submission5.pojos.Movie;
-import id.ac.umn.made_basiliusbias_submission5.pojos.Tv;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FavoritesHelper {
 
@@ -48,12 +43,7 @@ public class FavoritesHelper {
         return INSTANCE;
     }
 
-    public DatabaseHelper getDataBaseHelper() {
-        return dataBaseHelper;
-    }
-
     public boolean isUserFavorited(int data_id, String data_type, String user_name) {
-        dataBaseHelper.openDatabase();
 
         // WHERE fname="Lucida" AND lname="Console"
         String selection = "data_id=? AND data_type=? AND user_name=?"; // MISAL: "fname=? AND lname=?"
@@ -94,67 +84,13 @@ public class FavoritesHelper {
         dataBaseHelper.closeDatabase();
     }
 
-    public List<?> getUserFavoritesListType(String data_type, String user_name) {
-        List<Movie> movies = new ArrayList<>();
-        List<Tv> tvs = new ArrayList<>();
-
-        // WHERE fname="Lucida" AND lname="Console"
-        String selection = "data_type=? AND user_name=?"; // MISAL: "fname=? AND lname=?"
-        String[] selectionArgs = { data_type, user_name }; // MISAL: {"Lucida", "Console"}
-
-        dataBaseHelper.openDatabase();
-
-        Cursor cursor = dataBaseHelper.querySelect(
-                TABLE_FAVORITES,
-                TABLE_COLUMN,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
-
-        while(cursor.moveToNext()) {
-            if(data_type.equalsIgnoreCase("Movie")) {
-                movies.add(
-                        new Movie(
-                                cursor.getInt(0),
-                                cursor.getString(3),
-                                cursor.getString(2),
-                                cursor.getInt(6),
-                                cursor.getInt(5)
-                        )
-                );
-            }
-            else if(data_type.equalsIgnoreCase("TV")) {
-                tvs.add(
-                        new Tv(
-                                cursor.getString(3),
-                                cursor.getInt(0),
-                                cursor.getDouble(5),
-                                cursor.getDouble(6),
-                                cursor.getString(2),
-                                cursor.getString(4)
-                        )
-                );
-            }
-        }
-
-        cursor.close();
-        dataBaseHelper.closeDatabase();
-
-        if(data_type.equalsIgnoreCase("Movie")) return movies;
-        else if(data_type.equalsIgnoreCase("TV")) return tvs;
-        else return null;
-    }
-
     public Cursor getUserFavoritesType(String data_type, String user_name) {
 
-        dataBaseHelper.openDatabase();
-
         // WHERE fname="Lucida" AND lname="Console"
         String selection = "data_type=? AND user_name=?"; // MISAL: "fname=? AND lname=?"
         String[] selectionArgs = { data_type, user_name }; // MISAL: {"Lucida", "Console"}
+
+        dataBaseHelper.openDatabase();
 
         return dataBaseHelper.querySelect(
                 TABLE_FAVORITES,
@@ -165,6 +101,10 @@ public class FavoritesHelper {
                 null,
                 null
         );
+
+        /*
+        *   Entah Harus Di Close Ato Engga ..
+        * */
     }
 
 }

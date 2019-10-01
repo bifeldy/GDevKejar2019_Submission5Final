@@ -88,8 +88,11 @@ public class ProfileActivity extends LangApp implements ProfileFragment.OnFragme
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.Bifeldy.tk/"));
             startActivity(intent);
         }
+        else {
+            // Back To Parent Activity
+            finish();
+        }
 
-        // Back To Parent Activity
         return super.onOptionsItemSelected(item);
     }
 

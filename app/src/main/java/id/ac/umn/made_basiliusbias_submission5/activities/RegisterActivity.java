@@ -89,9 +89,11 @@ public class RegisterActivity extends LangApp implements View.OnClickListener {
             startActivity(intent);
             return true;
         }
+        else {
+            // Back To Parent Activity
+            finish();
+        }
 
-        // Back To Parent Activity
-        finish();
         return super.onOptionsItemSelected(item);
     }
 

@@ -78,7 +78,7 @@ public class TvListAdapter extends RecyclerView.Adapter<TvListAdapter.TvListView
             Intent intent = new Intent(recyclerContext, DetailActivity.class);
             intent.putExtra("activity_title", recyclerContext.getResources().getString(R.string.detail) + " -- " + recyclerContext.getResources().getString(R.string.tv) + " #");
             intent.putExtra("data_id", tv.getId());
-            intent.putExtra("data_type", "TV");
+            intent.putExtra("data_type", "tv");
             intent.putExtra("tmdb_url", "https://www.themoviedb.org/tv/" + tv.getId());
             recyclerContext.startActivity(intent);
         });

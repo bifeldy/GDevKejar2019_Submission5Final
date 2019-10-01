@@ -138,12 +138,11 @@ public class ProfileFragment extends Fragment {
 
                 // Setting Up, Load, & Adding Data To Adapter
                 movieGridAdapter = new MovieGridAdapter(v.getContext(), R.layout.item_grid);
-                favoriteMovieViewModel.loadFavoriteMovie(
-                        v,
-                        loading_image,
-                        loading_text,
-                        "Movie",
-                        userInfo.getString(KEY_USERNAME, "")
+                favoriteMovieViewModel.loadFavorite(
+                    v,
+                    loading_image,
+                    loading_text,
+                    "movie"
                 );
                 recyclerView.setAdapter(movieGridAdapter);
                 break;
@@ -163,12 +162,11 @@ public class ProfileFragment extends Fragment {
 
                 // Setting Up, Load, & Adding Data To Adapter
                 tvListAdapter = new TvListAdapter(v.getContext(), R.layout.item_list);
-                favoriteTvViewModel.loadFavoriteTv(
-                        v,
-                        loading_image,
-                        loading_text,
-                        "TV",
-                        userInfo.getString(KEY_USERNAME, "")
+                favoriteTvViewModel.loadFavorite(
+                    v,
+                    loading_image,
+                    loading_text,
+                    "tv"
                 );
                 recyclerView.setAdapter(tvListAdapter);
                 break;

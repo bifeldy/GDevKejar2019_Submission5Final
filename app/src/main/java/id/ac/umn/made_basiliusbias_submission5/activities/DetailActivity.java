@@ -133,7 +133,7 @@ public class DetailActivity extends LangApp {
         detail_genres = findViewById(R.id.detail_genres);
 
         // Load Data
-        if(data_type.equalsIgnoreCase("Movie")) {
+        if(data_type.equalsIgnoreCase("movie")) {
 
             // Setting Up API
             DetailMovieViewModel detailMovieViewModel = ViewModelProviders.of(this).get(DetailMovieViewModel.class);
@@ -199,7 +199,7 @@ public class DetailActivity extends LangApp {
                     data_id
             );
         }
-        else if(data_type.equalsIgnoreCase("TV")){
+        else if(data_type.equalsIgnoreCase("tv")){
 
             // Setting Up API
             DetailTvViewModel detailTvViewModel = ViewModelProviders.of(this).get(DetailTvViewModel.class);
@@ -314,8 +314,11 @@ public class DetailActivity extends LangApp {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse(tmdb_url));
             startActivity(intent);
         }
+        else {
+            // Back To Parent Activity
+            finish();
+        }
 
-        // Back To Parent Activity
         return super.onOptionsItemSelected(item);
     }
 }

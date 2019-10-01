@@ -75,7 +75,7 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.Movi
             Intent intent = new Intent(recyclerContext, DetailActivity.class);
             intent.putExtra("activity_title", recyclerContext.getResources().getString(R.string.detail) + " -- " + recyclerContext.getResources().getString(R.string.movie) + " #");
             intent.putExtra("data_id", movie.getId());
-            intent.putExtra("data_type", "Movie");
+            intent.putExtra("data_type", "movie");
             intent.putExtra("tmdb_url", "https://www.themoviedb.org/movie/" + movie.getId());
             recyclerContext.startActivity(intent);
         });
