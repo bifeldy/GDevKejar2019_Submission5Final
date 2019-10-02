@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MADE-BBAC_Submission5</string>
+    <string name="animated_loading_data" translatable="false">https://jrznog.dm.files.1drv.com/y4mebt7-M1sS28d2MWGIFeO3rcdWbDua4NIFA3O5H6OqyBoxWcAR_P-Dxd2fxucS9TeH2btYKmn_VA91qemaumk0H7gvitAoBd9bOKkPpCb5-_LEDYaJQBk67JKPi1o059dSfK2zUu2HZDyP9_T8O7LtbaPO90vdGVhsKtY-QTqV5P9rAuiJgJRYBQD282arPNv8T4zIeKKcx8zj6qHgHbX8g</string>
+    <string name="loading_text">Input Username …</string>
+    <string name="data_title">Title</string>
+    <string name="data_image">Image</string>
+    <string name="data_score">Score</string>
+    <string name="data_popularity">Popularity</string>
+    <string name="data_overview">We don\'t have an overview translated in English.</string>
+    <string name="loading_image">Loading Image …</string>
+    <string name="search_text">Input UserName .. ^_^.~</string>
+    <string name="search_button">Search User!</string>
+</resources>
